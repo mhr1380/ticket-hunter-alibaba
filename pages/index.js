@@ -4,14 +4,14 @@ import { toast } from "react-toastify";
 
 const genereteProperText = (destination, date) => {
   if (destination === "tehran") {
-    return `{"From":161,"To":1,"DepartureDate":"${new Date(date)
+    return `{"From":219,"To":1,"DepartureDate":"${new Date(date)
       .toISOString()
       .slice(
         0,
         new Date(date).toISOString().lastIndexOf(".")
       )}","TicketType":1,"IsExclusiveCompartment":false,"PassengerCount":1,"ReturnDate":null,"ServiceType":null,"Channel":1,"AvailableTargetType":null,"Requester":null,"UserId":504604002,"OnlyWithHotel":false,"ForceUpdate":null}`;
   } else {
-    return `{"From":1,"To":161,"DepartureDate":"${new Date(date)
+    return `{"From":1,"To":219,"DepartureDate":"${new Date(date)
       .toISOString()
       .slice(
         0,
@@ -111,19 +111,19 @@ export default function Home() {
             setDetails({ ...details, destination: "tehran" });
           }}
         >
-          قم به تهران
+          یزد به تهران
         </div>
         <div
           className={`text-center px-7 py-2 ${
-            details?.destination === "qom"
+            details?.destination === "yazd"
               ? "bg-indigo-400 text-white"
               : " bg-white border-l border-indigo-300"
           }`}
           onClick={() => {
-            setDetails({ ...details, destination: "qom" });
+            setDetails({ ...details, destination: "yazd" });
           }}
         >
-          تهران به قم
+          تهران به یزد
         </div>
       </div>
       <button
